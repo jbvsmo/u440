@@ -1,0 +1,17 @@
+[project]
+name = "u440"
+version = "0.1.0"
+description = "uv440 - Python Versioning Schema"
+readme = "README.md"
+authors = [
+    { name = "João Bernardo Oliveira", email = "jbvsmo@gmail.com" } 
+]
+requires-python = ">=3.10"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "ipython>=8.29.0",
+    "ruff>=0.7.1",
+]
+
