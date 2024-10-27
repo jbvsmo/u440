@@ -36,6 +36,14 @@ yes: 6130619 (92.56%)
  no: 493121 (7.44%)
 ```
 
+Bit usage for our u64 representation:
+
+| Field 	| v0 	| v1 	| v2 	| v3 	| release 	| num 	|
+|---	|---	|---	|---	|---	|---	|---	|
+|  	| ............ 	| ............ 	| ............ 	| ............ 	| .... 	| ............ 	|
+| Bits 	| 12 	| 12 	| 12 	| 12 	| 4 	| 12 	|
+| Mask 	| 0xFFF << 52 	| 0xFFF << 40 	| 0xFFF << 28 	| 0xFFF << 16 	| 0x7 << 12 	| 0xFFF << 0 	|
+
 **Important:** This does not mean it will be better than uv's implementation or that it
 will indeed cover a greater percentage of the version number comparisons as obscure
 and old PyPI packages might never be used and e.g. NumPy will have its versions
