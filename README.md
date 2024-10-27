@@ -44,6 +44,9 @@ Bit usage for our u64 representation:
 | Bits 	| 12 	| 12 	| 12 	| 12 	| 4 	| 12 	|
 | Mask 	| 0xFFF << 52 	| 0xFFF << 40 	| 0xFFF << 28 	| 0xFFF << 16 	| 0x7 << 12 	| 0xFFF << 0 	|
 
+The v0..v3 fields are the first 4 segments of the version number. The release field is
+the pre/post/dev/final component. The num field is the number of the release version.
+
 **Important:** This does not mean it will be better than uv's implementation or that it
 will indeed cover a greater percentage of the version number comparisons as obscure
 and old PyPI packages might never be used and e.g. NumPy will have its versions
