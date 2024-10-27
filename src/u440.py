@@ -206,6 +206,9 @@ class Version:
     def __lt__(self, other):
         return self.u64 < other.u64
 
+    def __eq__(self, other):
+        return self.u64 == other.u64
+
     def __repr__(self):
         return self.normal()
 

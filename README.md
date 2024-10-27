@@ -6,8 +6,8 @@ This is inspired by the awesome job [uv](https://astral.sh/uv) team did to imple
 versions can be represented and thus compared with each other using only a single 64-bit unsigned integer (u64).
 
 To run this project:
-```bash
-uv run u440.py 1.0 1.0a 1.0rc 1.0.0pre 1.0.0.0post0 1.0post1 1.0dev
+```python
+uv run src/u440.py 1.0 1.0a 1.0rc 1.0.0pre 1.0.0.0post0 1.0post1 1.0dev
 1.0           0000000000010000000000000000000000000000000000000101000000000000
 1.0a0         0000000000010000000000000000000000000000000000000010000000000000
 1.0rc0        0000000000010000000000000000000000000000000000000100000000000000
@@ -15,7 +15,7 @@ uv run u440.py 1.0 1.0a 1.0rc 1.0.0pre 1.0.0.0post0 1.0post1 1.0dev
 1.0.0.0.post0 0000000000010000000000000000000000000000000000000110000000000000
 1.0.post1     0000000000010000000000000000000000000000000000000110000000000001
 1.0.dev0      0000000000010000000000000000000000000000000000000001000000000000
-1.0.dev0 < 1.0a0 < 1.0rc0 < 1.0.0rc0 < 1.0 < 1.0.0.0.post0 < 1.0.post1
+1.0.dev0 < 1.0a0 < 1.0rc0 = 1.0.0rc0 < 1.0 < 1.0.0.0.post0 < 1.0.post1
 ```
 
 There are two `--mask` available: u64 (our default) and uv64 which is implemented from
@@ -36,8 +36,8 @@ yes: 6130619 (92.56%)
  no: 493121 (7.44%)
 ```
 
-**Important:** This does not mean it will be faster than uv's implementation or that it
-will indeed cover a greater percentage of the version number comparisons as obscure 
+**Important:** This does not mean it will be better than uv's implementation or that it
+will indeed cover a greater percentage of the version number comparisons as obscure
 and old PyPI packages might never be used and e.g. NumPy will have its versions
 compared millions of times more often, and they have well-behaved version numbers.
 
@@ -66,7 +66,7 @@ Notice several version numbers, specially ones in the beginning of the file, are
 I assume the [regex supplied](https://packaging.python.org/en/latest/specifications/version-specifiers/#appendix-parsing-version-strings-with-regular-expressions) by Python packaging docs is the de facto standard
 and I will only care about version numbers it matches. Only 0.06% failed to parse.
 
-Below are part of the statistics. You can `uv run validation.py` to see the full output.
+Below are part of the statistics. You can `uv run src/validation.py` to see the full output.
 
 ```
        total: 6623740 (100.00%)  All version numbers exported from PyPI

@@ -13,7 +13,7 @@ from old import Version
 
 
 def load_version_data():
-    root = pathlib.Path(__file__).resolve().parent.parent.parent
+    root = pathlib.Path(__file__).resolve().parent.parent
     pk_file_path = root / "versions.pickle"
     zip_file_path = root / "versions.zip"
     if pk_file_path.is_file():
@@ -116,7 +116,7 @@ display(segments, total, top=10)
 
 epoch = count(v.epoch.bit_length() for v in versions)  # epoch may be 0 bits
 print("epoch (bits):")
-display(epoch, total, top=3)
+display(epoch, total, top=10)
 
 pre_num = count_bits(v.pre for v in versions if v.release != "final")
 print("pre (bits):")
